@@ -1,0 +1,37 @@
+Python Module installation Instuctions for MPAi:
+
+In order to edit the code and use py2exe you will need the following modules.
+
+Python 2.7.10
+	Download from: https://www.python.org/
+
+Python Imagining Library (PIL)
+	Download exe from : http://www.pythonware.com/products/pil/
+	Python Imaging Library 1.1.7 for Python 2.7 (Windows only)
+	
+py2exe
+	Download exe from: https://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/
+	py2exe-0.6.9.win32-py2.7.exe
+	
+And most importantly
+
+The Snack Sound Toolkit 2.2.10
+	Download from: http://www.speech.kth.se/snack/download.html
+	Binary release for Windows with Python 2.3 (also 1.6-2.2) 745K (December 14, 2005) 
+	Follow the installation instructions.
+	
+I hope the above simplifies the effort of installing the modules.
+
+******************************************************************************************
+
+To convert the python files into a exe
+
+You will need a setup.py file, This can be found on the github.
+Use the following command:
+	python setup.py py2exe
+	
+	The .exe/s will be in the dist directory.
+
+******************************************************************************************
+
+-Josh 16/12/2016

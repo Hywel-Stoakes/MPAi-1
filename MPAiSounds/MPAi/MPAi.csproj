@@ -1,0 +1,1970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AAC44F2-C97C-41D7-A577-204C2CD22C40}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MPAi</RootNamespace>
+    <AssemblyName>MPAiSounds</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MPAi.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MPAi.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NAudio, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.8.0\lib\net35\NAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vlc.DotNet.Core, Version=2.1.130.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Core.2.1.130\lib\net45\x86\Vlc.DotNet.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=2.1.130.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.2.1.130\lib\net45\x86\Vlc.DotNet.Core.Interops.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=2.1.130.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Forms.2.1.130\lib\net45\x86\Vlc.DotNet.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Wpf, Version=2.1.126.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Wpf.2.1.126\lib\net45\x86\Vlc.DotNet.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\MPAiComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\MPAiComboBox.Designer.cs">
+      <DependentUpon>MPAiComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MPAiMessageBoxFactory.cs" />
+    <Compile Include="Components\MPAiMessageBoxSkeleton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\MPAiMessageBoxSkeleton.Designer.cs">
+      <DependentUpon>MPAiMessageBoxSkeleton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cores\DirectoryManagement.cs" />
+    <Compile Include="Cores\MailSender.cs" />
+    <Compile Include="Cores\Scoreboard\MPAiSoundScoreBoard.cs" />
+    <Compile Include="Cores\NAudioPlayer.cs" />
+    <Compile Include="Cores\Scoreboard\MPAiSoundScoreboardLoader.cs" />
+    <Compile Include="Cores\Scoreboard\ReportLauncher.cs" />
+    <Compile Include="Components\MPAiButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\MPAiButton.Designer.cs">
+      <DependentUpon>MPAiButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popups\AdministratorConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\AdministratorConsole.Designer.cs">
+      <DependentUpon>AdministratorConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popups\ChangePasswordWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\ChangePasswordWindow.Designer.cs">
+      <DependentUpon>ChangePasswordWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popups\ConfirmRandomisedPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\ConfirmRandomisedPassword.Designer.cs">
+      <DependentUpon>ConfirmRandomisedPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popups\FeedbackScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\FeedbackScreen.Designer.cs">
+      <DependentUpon>FeedbackScreen.cs</DependentUpon>
+    </Compile>
+    <None Include="Formant\data\maori\VowelCodes.csv" />
+    <None Include="Formant\data\maori\VowelCodes.xlsx" />
+    <None Include="Formant\data\maori\WordCodes.csv" />
+    <None Include="Formant\data\maori\WordCodes.xlsx" />
+    <None Include="Formant\dist\bz2.pyd" />
+    <None Include="Formant\dist\library.zip" />
+    <None Include="Formant\dist\PIL._imaging.pyd" />
+    <None Include="Formant\dist\PIL._imagingtk.pyd" />
+    <None Include="Formant\dist\select.pyd" />
+    <None Include="Formant\dist\tcl\snacklib\pkgIndex.tcl" />
+    <None Include="Formant\dist\tcl\snacklib\snack.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\auto.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\clock.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\ascii.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\big5.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1250.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1251.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1252.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1253.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1254.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1255.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1256.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1257.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp1258.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp437.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp737.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp775.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp850.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp852.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp855.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp857.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp860.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp861.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp862.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp863.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp864.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp865.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp866.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp869.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp874.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp932.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp936.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp949.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\cp950.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\dingbats.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\ebcdic.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\euc-cn.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\euc-jp.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\euc-kr.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\gb12345.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\gb1988.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\gb2312-raw.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\gb2312.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso2022-jp.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso2022-kr.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso2022.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-1.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-10.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-13.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-14.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-15.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-16.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-2.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-3.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-4.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-5.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-6.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-7.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-8.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\iso8859-9.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\jis0201.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\jis0208.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\jis0212.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\koi8-r.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\koi8-u.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\ksc5601.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macCentEuro.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macCroatian.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macCyrillic.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macDingbats.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macGreek.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macIceland.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macJapan.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macRoman.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macRomania.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macThai.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macTurkish.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\macUkraine.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\shiftjis.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\symbol.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\encoding\tis-620.enc" />
+    <None Include="Formant\dist\tcl\tcl8.5\history.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\http1.0\http.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\http1.0\pkgIndex.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\init.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\af.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\af_za.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ar.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ar_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ar_jo.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ar_lb.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ar_sy.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\be.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\bg.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\bn.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\bn_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ca.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\cs.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\da.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\de.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\de_at.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\de_be.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\el.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_au.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_be.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_bw.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_ca.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_gb.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_hk.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_ie.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_nz.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_ph.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_sg.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_za.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\en_zw.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\eo.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_ar.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_bo.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_cl.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_co.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_cr.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_do.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_ec.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_gt.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_hn.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_mx.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_ni.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_pa.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_pe.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_pr.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_py.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_sv.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_uy.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\es_ve.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\et.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\eu.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\eu_es.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fa.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fa_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fa_ir.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fi.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fo.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fo_fo.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fr.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fr_be.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fr_ca.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\fr_ch.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ga.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ga_ie.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\gl.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\gl_es.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\gv.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\gv_gb.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\he.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\hi.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\hi_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\hr.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\hu.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\id.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\id_id.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\is.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\it.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\it_ch.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ja.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\kl.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\kl_gl.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ko.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\kok.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\kok_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ko_kr.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\kw.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\kw_gb.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\lt.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\lv.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\mk.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\mr.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\mr_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ms.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ms_my.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\mt.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\nb.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\nl.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\nl_be.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\nn.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\pl.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\pt.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\pt_br.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ro.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ru.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ru_ua.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\sh.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\sk.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\sl.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\sq.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\sr.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\sv.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\sw.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ta.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\ta_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\te.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\te_in.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\th.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\tr.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\uk.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\vi.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\zh.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\zh_cn.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\zh_hk.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\zh_sg.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\msgs\zh_tw.msg" />
+    <None Include="Formant\dist\tcl\tcl8.5\opt0.4\optparse.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\opt0.4\pkgIndex.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\package.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\parray.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\safe.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\tclIndex" />
+    <None Include="Formant\dist\tcl\tcl8.5\tm.tcl" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Abidjan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Accra" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Addis_Ababa" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Algiers" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Asmara" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Asmera" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Bamako" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Bangui" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Banjul" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Bissau" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Blantyre" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Brazzaville" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Bujumbura" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Cairo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Casablanca" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Ceuta" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Conakry" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Dakar" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Dar_es_Salaam" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Djibouti" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Douala" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\El_Aaiun" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Freetown" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Gaborone" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Harare" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Johannesburg" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Kampala" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Khartoum" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Kigali" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Kinshasa" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Lagos" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Libreville" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Lome" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Luanda" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Lubumbashi" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Lusaka" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Malabo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Maputo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Maseru" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Mbabane" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Mogadishu" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Monrovia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Nairobi" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Ndjamena" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Niamey" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Nouakchott" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Ouagadougou" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Porto-Novo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Sao_Tome" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Timbuktu" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Tripoli" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Tunis" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Africa\Windhoek" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Adak" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Anchorage" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Anguilla" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Antigua" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Araguaina" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\Buenos_Aires" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\Catamarca" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\ComodRivadavia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\Cordoba" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\Jujuy" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\La_Rioja" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\Mendoza" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\Rio_Gallegos" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\San_Juan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\San_Luis" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\Tucuman" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Argentina\Ushuaia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Aruba" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Asuncion" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Atikokan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Atka" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Bahia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Barbados" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Belem" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Belize" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Blanc-Sablon" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Boa_Vista" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Bogota" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Boise" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Buenos_Aires" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Cambridge_Bay" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Campo_Grande" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Cancun" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Caracas" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Catamarca" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Cayenne" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Cayman" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Chicago" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Chihuahua" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Coral_Harbour" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Cordoba" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Costa_Rica" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Cuiaba" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Curacao" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Danmarkshavn" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Dawson" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Dawson_Creek" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Denver" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Detroit" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Dominica" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Edmonton" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Eirunepe" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\El_Salvador" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Ensenada" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Fortaleza" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Fort_Wayne" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Glace_Bay" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Godthab" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Goose_Bay" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Grand_Turk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Grenada" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Guadeloupe" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Guatemala" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Guayaquil" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Guyana" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Halifax" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Havana" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Hermosillo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indianapolis" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indiana\Indianapolis" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indiana\Knox" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indiana\Marengo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indiana\Petersburg" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indiana\Tell_City" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indiana\Vevay" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indiana\Vincennes" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Indiana\Winamac" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Inuvik" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Iqaluit" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Jamaica" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Jujuy" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Juneau" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Kentucky\Louisville" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Kentucky\Monticello" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Knox_IN" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\La_Paz" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Lima" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Los_Angeles" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Louisville" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Maceio" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Managua" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Manaus" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Marigot" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Martinique" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Mazatlan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Mendoza" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Menominee" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Merida" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Mexico_City" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Miquelon" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Moncton" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Monterrey" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Montevideo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Montreal" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Montserrat" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Nassau" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\New_York" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Nipigon" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Nome" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Noronha" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\North_Dakota\Center" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\North_Dakota\New_Salem" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Panama" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Pangnirtung" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Paramaribo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Phoenix" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Port-au-Prince" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Porto_Acre" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Porto_Velho" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Port_of_Spain" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Puerto_Rico" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Rainy_River" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Rankin_Inlet" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Recife" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Regina" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Resolute" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Rio_Branco" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Rosario" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Santiago" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Santo_Domingo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Sao_Paulo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Scoresbysund" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Shiprock" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\St_Barthelemy" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\St_Johns" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\St_Kitts" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\St_Lucia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\St_Thomas" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\St_Vincent" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Swift_Current" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Tegucigalpa" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Thule" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Thunder_Bay" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Tijuana" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Toronto" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Tortola" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Vancouver" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Virgin" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Whitehorse" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Winnipeg" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Yakutat" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\America\Yellowknife" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\Casey" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\Davis" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\DumontDUrville" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\Mawson" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\McMurdo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\Palmer" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\Rothera" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\South_Pole" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\Syowa" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Antarctica\Vostok" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Arctic\Longyearbyen" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Aden" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Almaty" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Amman" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Anadyr" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Aqtau" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Aqtobe" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Ashgabat" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Ashkhabad" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Baghdad" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Bahrain" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Baku" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Bangkok" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Beirut" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Bishkek" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Brunei" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Calcutta" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Choibalsan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Chongqing" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Chungking" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Colombo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Dacca" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Damascus" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Dhaka" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Dili" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Dubai" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Dushanbe" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Gaza" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Harbin" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Hong_Kong" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Hovd" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Ho_Chi_Minh" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Irkutsk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Istanbul" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Jakarta" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Jayapura" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Jerusalem" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Kabul" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Kamchatka" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Karachi" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Kashgar" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Katmandu" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Kolkata" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Krasnoyarsk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Kuala_Lumpur" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Kuching" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Kuwait" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Macao" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Macau" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Magadan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Makassar" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Manila" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Muscat" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Nicosia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Novosibirsk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Omsk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Oral" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Phnom_Penh" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Pontianak" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Pyongyang" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Qatar" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Qyzylorda" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Rangoon" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Riyadh" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Saigon" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Sakhalin" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Samarkand" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Seoul" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Shanghai" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Singapore" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Taipei" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Tashkent" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Tbilisi" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Tehran" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Tel_Aviv" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Thimbu" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Thimphu" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Tokyo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Ujung_Pandang" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Ulaanbaatar" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Ulan_Bator" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Urumqi" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Vientiane" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Vladivostok" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Yakutsk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Yekaterinburg" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Asia\Yerevan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Azores" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Bermuda" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Canary" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Cape_Verde" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Faeroe" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Faroe" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Jan_Mayen" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Madeira" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Reykjavik" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\South_Georgia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\Stanley" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Atlantic\St_Helena" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\ACT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Adelaide" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Brisbane" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Broken_Hill" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Canberra" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Currie" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Darwin" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Eucla" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Hobart" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\LHI" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Lindeman" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Lord_Howe" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Melbourne" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\North" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\NSW" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Perth" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Queensland" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\South" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Sydney" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Tasmania" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Victoria" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\West" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Australia\Yancowinna" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Brazil\Acre" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Brazil\DeNoronha" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Brazil\East" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Brazil\West" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\Atlantic" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\Central" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\East-Saskatchewan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\Eastern" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\Mountain" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\Newfoundland" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\Pacific" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\Saskatchewan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Canada\Yukon" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\CET" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Chile\Continental" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Chile\EasterIsland" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\CST6CDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Cuba" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\EET" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Egypt" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Eire" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\EST" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\EST5EDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+0" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+1" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+10" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+11" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+12" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+2" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+3" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+4" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+5" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+6" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+7" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+8" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT+9" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-0" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-1" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-10" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-11" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-12" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-13" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-14" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-2" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-3" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-4" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-5" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-6" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-7" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-8" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT-9" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\GMT0" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\Greenwich" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\UCT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\Universal" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\UTC" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Etc\Zulu" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Amsterdam" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Andorra" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Athens" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Belfast" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Belgrade" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Berlin" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Bratislava" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Brussels" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Bucharest" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Budapest" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Chisinau" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Copenhagen" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Dublin" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Gibraltar" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Guernsey" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Helsinki" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Isle_of_Man" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Istanbul" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Jersey" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Kaliningrad" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Kiev" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Lisbon" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Ljubljana" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\London" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Luxembourg" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Madrid" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Malta" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Mariehamn" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Minsk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Monaco" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Moscow" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Nicosia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Oslo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Paris" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Podgorica" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Prague" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Riga" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Rome" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Samara" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\San_Marino" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Sarajevo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Simferopol" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Skopje" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Sofia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Stockholm" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Tallinn" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Tirane" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Tiraspol" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Uzhgorod" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Vaduz" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Vatican" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Vienna" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Vilnius" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Volgograd" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Warsaw" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Zagreb" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Zaporozhye" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Europe\Zurich" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\GB" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\GB-Eire" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\GMT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\GMT+0" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\GMT-0" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\GMT0" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Greenwich" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Hongkong" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\HST" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Iceland" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Antananarivo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Chagos" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Christmas" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Cocos" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Comoro" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Kerguelen" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Mahe" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Maldives" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Mauritius" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Mayotte" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Indian\Reunion" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Iran" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Israel" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Jamaica" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Japan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Kwajalein" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Libya" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\MET" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Mexico\BajaNorte" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Mexico\BajaSur" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Mexico\General" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\MST" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\MST7MDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Navajo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\NZ" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\NZ-CHAT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Apia" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Auckland" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Chatham" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Easter" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Efate" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Enderbury" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Fakaofo" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Fiji" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Funafuti" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Galapagos" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Gambier" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Guadalcanal" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Guam" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Honolulu" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Johnston" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Kiritimati" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Kosrae" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Kwajalein" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Majuro" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Marquesas" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Midway" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Nauru" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Niue" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Norfolk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Noumea" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Pago_Pago" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Palau" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Pitcairn" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Ponape" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Port_Moresby" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Rarotonga" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Saipan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Samoa" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Tahiti" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Tarawa" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Tongatapu" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Truk" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Wake" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Wallis" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Pacific\Yap" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Poland" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Portugal" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\PRC" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\PST8PDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\ROC" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\ROK" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Singapore" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\AST4" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\AST4ADT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\CST6" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\CST6CDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\EST5" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\EST5EDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\HST10" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\MST7" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\MST7MDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\PST8" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\PST8PDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\YST9" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\SystemV\YST9YDT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Turkey" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\UCT" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Universal" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Alaska" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Aleutian" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Arizona" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Central" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\East-Indiana" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Eastern" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Hawaii" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Indiana-Starke" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Michigan" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Mountain" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Pacific" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Pacific-New" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\US\Samoa" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\UTC" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\W-SU" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\WET" />
+    <None Include="Formant\dist\tcl\tcl8.5\tzdata\Zulu" />
+    <None Include="Formant\dist\tcl\tcl8.5\word.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\bgerror.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\button.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\choosedir.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\clrpick.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\comdlg.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\console.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\anilabel.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\aniwave.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\arrow.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\bind.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\bitmap.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\browse" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\button.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\check.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\clrpick.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\colors.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\combo.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\cscroll.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\ctext.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\dialog1.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\dialog2.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\en.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\entry1.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\entry2.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\entry3.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\filebox.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\floor.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\form.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\goldberg.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\hello" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\hscale.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\icon.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\image1.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\image2.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\images\face.xbm" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\images\flagdown.xbm" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\images\flagup.xbm" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\images\gray25.xbm" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\images\letters.xbm" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\images\noletter.xbm" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\images\pattern.xbm" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\images\teapot.ppm" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\items.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\ixset" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\knightstour.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\label.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\labelframe.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\license.terms" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\mclist.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\menu.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\menubu.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\msgbox.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\nl.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\paned1.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\paned2.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\pendulum.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\plot.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\puzzle.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\radio.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\README" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\rmt" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\rolodex" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\ruler.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\sayings.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\search.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\spin.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\square" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\states.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\style.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\tclIndex" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\tcolor" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\text.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\textpeer.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\timer" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\toolbar.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\tree.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\ttkbut.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\ttkmenu.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\ttknote.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\ttkpane.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\ttkprogress.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\twind.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\unicodeout.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\vscale.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\demos\widget" />
+    <None Include="Formant\dist\tcl\tk8.5\dialog.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\entry.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\focus.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\images\logo.eps" />
+    <None Include="Formant\dist\tcl\tk8.5\images\pwrdLogo.eps" />
+    <None Include="Formant\dist\tcl\tk8.5\images\README" />
+    <None Include="Formant\dist\tcl\tk8.5\license.terms" />
+    <None Include="Formant\dist\tcl\tk8.5\listbox.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\menu.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\mkpsenc.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\msgbox.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\cs.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\da.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\de.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\el.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\en.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\en_gb.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\eo.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\es.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\fr.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\hu.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\it.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\nl.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\pl.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\pt.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\ru.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\msgs\sv.msg" />
+    <None Include="Formant\dist\tcl\tk8.5\obsolete.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\optMenu.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\palette.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\panedwindow.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\pkgIndex.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\safetk.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\scale.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\scrlbar.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\spinbox.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\tclIndex" />
+    <None Include="Formant\dist\tcl\tk8.5\tearoff.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\text.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\tk.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\tkfbox.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\altTheme.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\aquaTheme.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\button.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\clamTheme.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\classicTheme.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\combobox.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\cursors.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\defaults.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\entry.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\fonts.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\menubutton.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\notebook.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\panedwindow.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\progress.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\scale.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\scrollbar.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\sizegrip.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\treeview.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\ttk.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\utils.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\winTheme.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\ttk\xpTheme.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\unsupported.tcl" />
+    <None Include="Formant\dist\tcl\tk8.5\xmfbox.tcl" />
+    <None Include="Formant\dist\unicodedata.pyd" />
+    <None Include="Formant\dist\_ctypes.pyd" />
+    <None Include="Formant\dist\_hashlib.pyd" />
+    <None Include="Formant\dist\_tkinter.pyd" />
+    <Compile Include="Modules\AppDataPath.cs" />
+    <Compile Include="Modules\VoiceType.cs" />
+    <Compile Include="DatabaseModel\SingleFile.cs" />
+    <Compile Include="DatabaseModel\MPAiModel.cs" />
+    <Compile Include="DatabaseModel\Recording.cs" />
+    <Compile Include="DatabaseModel\Speaker.cs" />
+    <Compile Include="DatabaseModel\Category.cs" />
+    <Compile Include="DatabaseModel\Word.cs" />
+    <Compile Include="Cores\EnumerationPicker.cs" />
+    <Compile Include="Modules\IoController.cs" />
+    <Compile Include="Modules\MPAiUser.cs" />
+    <Compile Include="Cores\NameParser.cs" />
+    <Compile Include="Modules\PlotController.cs" />
+    <Compile Include="Modules\UserManagement.cs" />
+    <Compile Include="Forms\LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainFormInterface.cs" />
+    <Compile Include="Components\MenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\MenuStrip.Designer.cs">
+      <DependentUpon>MenuStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MPAiSoundMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MPAiSoundMainMenu.Designer.cs">
+      <DependentUpon>MPAiSoundMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popups\UserCreationScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\UserCreationScreen.Designer.cs">
+      <DependentUpon>UserCreationScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VideoPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VideoPlayer.Designer.cs">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\Popups\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popups\PathConfigScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\PathConfigScreen.Designer.cs">
+      <DependentUpon>PathConfigScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.cs" />
+    <EmbeddedResource Include="Components\MPAiButton.resx">
+      <DependentUpon>MPAiButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\MPAiMessageBoxSkeleton.resx">
+      <DependentUpon>MPAiMessageBoxSkeleton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\AdministratorConsole.resx">
+      <DependentUpon>AdministratorConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\ChangePasswordWindow.resx">
+      <DependentUpon>ChangePasswordWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\ConfirmRandomisedPassword.resx">
+      <DependentUpon>ConfirmRandomisedPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\FeedbackScreen.resx">
+      <DependentUpon>FeedbackScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\MenuStrip.resx">
+      <DependentUpon>MenuStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MPAiSoundMainMenu.resx">
+      <DependentUpon>MPAiSoundMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\UserCreationScreen.resx">
+      <DependentUpon>UserCreationScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoPlayer.resx">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\PathConfigScreen.resx">
+      <DependentUpon>PathConfigScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\MPAi.Models.VoiceTypeConverter.datasource" />
+    <None Include="VlcLibs\header-files\.keep" />
+    <None Include="VlcLibs\vlcx64\.keep" />
+    <None Include="VlcLibs\vlcx86\.keep" />
+    <None Include="VlcLibs\vlcx86\plugins\audio_filter\x86.lnk" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\NAudio.dll" />
+    <Content Include="bin\Debug\NAudio.xml" />
+    <Content Include="bin\Debug\Vlc.DotNet.Core.dll" />
+    <Content Include="bin\Debug\Vlc.DotNet.Core.Interops.dll" />
+    <Content Include="bin\Debug\Vlc.DotNet.Forms.dll" />
+    <Content Include="bin\Debug\Vlc.DotNet.Wpf.dll" />
+    <Content Include="Formant\data\maori\longVowelHeritageFemale.txt" />
+    <Content Include="Formant\data\maori\longVowelHeritageMale.txt" />
+    <Content Include="Formant\data\maori\longVowelModernFemale.txt" />
+    <Content Include="Formant\data\maori\longVowelModernMale.txt" />
+    <Content Include="Formant\data\maori\monDataHeritageFemale.txt" />
+    <Content Include="Formant\data\maori\monDataHeritageMale.txt" />
+    <Content Include="Formant\data\maori\monDataModernFemale.txt" />
+    <Content Include="Formant\data\maori\monDataModernMale.txt" />
+    <Content Include="Formant\data\README.txt" />
+    <Content Include="Formant\dist\MPAiPlotRunner.exe" />
+    <Content Include="Formant\dist\MPAiVowelRunner.exe" />
+    <Content Include="Formant\dist\python27.dll" />
+    <Content Include="Formant\dist\tcl85.dll" />
+    <Content Include="Formant\dist\tcl\snacklib\libsnack.dll" />
+    <Content Include="Formant\dist\tcl\snacklib\libsnackogg.dll" />
+    <Content Include="Formant\dist\tcl\snacklib\libsnacksphere.dll" />
+    <Content Include="Formant\dist\tcl\snacklib\libsound.dll" />
+    <Content Include="Formant\dist\tcl\tk8.5\demos\images\earth.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\demos\images\earthris.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\demos\images\tcllogo.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\logo100.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\logo64.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\logoLarge.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\logoMed.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\pwrdLogo100.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\pwrdLogo150.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\pwrdLogo175.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\pwrdLogo200.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\pwrdLogo75.gif" />
+    <Content Include="Formant\dist\tcl\tk8.5\images\tai-ku.gif" />
+    <Content Include="Formant\dist\tcl\tkSnack.py" />
+    <Content Include="Formant\dist\tk85.dll" />
+    <Content Include="Formant\dist\w9xpopen.exe" />
+    <Content Include="Formant\FormantApp.py" />
+    <Content Include="Formant\FormantPlot.py" />
+    <Content Include="Formant\LoudnessMeter.py" />
+    <Content Include="Formant\MPAiPlotRunner.py" />
+    <Content Include="Formant\MPAiVowelRunner.py" />
+    <Content Include="Formant\pyInstallation.txt" />
+    <Content Include="Formant\setup.py" />
+    <Content Include="Formant\SoundProcessing.py" />
+    <Content Include="Formant\VowelApp.py" />
+    <Content Include="Formant\VowelPlot.py" />
+    <Content Include="Formant\VowelScorer.py" />
+    <Content Include="Formant\VowelScorerTester.py" />
+    <Content Include="MPAi.ico" />
+    <Content Include="Resources\CSSFiles\Scoreboard.css" />
+    <Content Include="Resources\MPAi.ico" />
+    <Content Include="Resources\VLCIcons\Forward.png" />
+    <Content Include="Resources\VLCIcons\Pause.png" />
+    <Content Include="Resources\VLCIcons\Play.png" />
+    <Content Include="Resources\VLCIcons\Backward.png" />
+    <Content Include="VlcLibs\header-files\deprecated.h" />
+    <Content Include="VlcLibs\header-files\libvlc.h" />
+    <Content Include="VlcLibs\header-files\libvlc_events.h" />
+    <Content Include="VlcLibs\header-files\libvlc_media.h" />
+    <Content Include="VlcLibs\header-files\libvlc_media_discoverer.h" />
+    <Content Include="VlcLibs\header-files\libvlc_media_library.h" />
+    <Content Include="VlcLibs\header-files\libvlc_media_list.h" />
+    <Content Include="VlcLibs\header-files\libvlc_media_list_player.h" />
+    <Content Include="VlcLibs\header-files\libvlc_media_player.h" />
+    <Content Include="VlcLibs\header-files\libvlc_structures.h" />
+    <Content Include="VlcLibs\header-files\libvlc_version.h" />
+    <Content Include="VlcLibs\header-files\libvlc_vlm.h" />
+    <Content Include="VlcLibs\header-files\vlc.h" />
+    <Content Include="VlcLibs\vlcx64\libgcc_s_seh-1.dll" />
+    <Content Include="VlcLibs\vlcx64\libstdc++-6.dll" />
+    <Content Include="VlcLibs\vlcx64\libvlc.dll" />
+    <Content Include="VlcLibs\vlcx64\libvlccore.dll" />
+    <Content Include="VlcLibs\vlcx64\libwinpthread-1.dll" />
+    <Content Include="VlcLibs\vlcx64\npvlc.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_attachment_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_bd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_ftp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_http_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_imem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_mms_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_rar_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_realrtsp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_smb_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_tcp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_udp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libaccess_vdr_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libcdda_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libdshow_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libdtv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libdvdnav_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libdvdread_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libfilesystem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libidummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\liblibbluray_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\liblive555_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\librtp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libscreen_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libsdp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libshm_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libstream_filter_rar_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libtimecode_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libvcd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access\libzip_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access_output\libaccess_output_dummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access_output\libaccess_output_file_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access_output\libaccess_output_http_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access_output\libaccess_output_livehttp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access_output\libaccess_output_shout_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\access_output\libaccess_output_udp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\liba52tofloat32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\liba52tospdif_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libaudiobargraph_a_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libaudio_format_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libchorus_flanger_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libcompressor_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libdolby_surround_decoder_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libdtstofloat32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libdtstospdif_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libequalizer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libgain_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libheadphone_channel_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libkaraoke_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libmono_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libmpgatofixed32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libnormvol_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libparam_eq_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libremap_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libsamplerate_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libscaletempo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libsimple_channel_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libspatializer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libspeex_resampler_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libstereo_widen_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libtrivial_channel_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_filter\libugly_resampler_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_mixer\libfloat_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_mixer\libinteger_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_output\libadummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_output\libafile_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_output\libamem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_output\libdirectsound_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_output\libmmdevice_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\audio_output\libwaveout_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\liba52_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libadpcm_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libaes3_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libaraw_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libavcodec_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libcc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libcdg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libcrystalhd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libcvdsub_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libddummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libdmo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libdts_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libdvbsub_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libdxva2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libedummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libfaad_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libflac_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libg711_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libkate_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\liblibass_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\liblibmpeg2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\liblpcm_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libmpeg_audio_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libopus_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libpng_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libquicktime_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\librawvideo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libschroedinger_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libscte27_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libspeex_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libspudec_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libstl_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libsubsdec_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libsubsusf_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libsvcdsub_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libt140_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libtheora_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libtwolame_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libuleaddvaudio_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libvorbis_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libx264_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\codec\libzvbi_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\control\libdummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\control\libgestures_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\control\libglobalhotkeys_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\control\libhotkeys_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\control\libnetsync_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\control\libntservice_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\control\liboldrc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libaiff_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libasf_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libau_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libavi_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libdemuxdump_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libdemux_cdg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libdemux_stl_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libdirac_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libes_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libflacsys_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libgme_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libh264_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libimage_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libmjpeg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libmkv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libmod_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libmp4_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libmpc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libmpgv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libnsc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libnsv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libnuv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libogg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libplaylist_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libps_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libpva_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\librawaud_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\librawdv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\librawvid_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libreal_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libsid_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libsmf_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libsubtitle_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libts_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libtta_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libty_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libvc1_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libvobsub_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libvoc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libwav_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\demux\libxa_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\gui\libqt4_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\gui\libskins2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\lua\liblua_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\meta_engine\libfolder_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\meta_engine\libtaglib_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\misc\libaudioscrobbler_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\misc\libexport_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\misc\libfingerprinter_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\misc\liblogger_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\misc\libstats_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\misc\libvod_rtsp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\misc\libxml_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mmx\libi420_rgb_mmx_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mmx\libi420_yuy2_mmx_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mmx\libi422_yuy2_mmx_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_asf_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_avi_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_dummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_mp4_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_mpjpeg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_ogg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_ps_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_ts_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\mux\libmux_wav_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_copy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_dirac_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_flac_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_h264_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_mlp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_mpeg4audio_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_mpeg4video_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_mpegvideo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\packetizer\libpacketizer_vc1_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\services_discovery\libmediadirs_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\services_discovery\libpodcast_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\services_discovery\libsap_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\services_discovery\libupnp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\services_discovery\libwindrive_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\sse2\libi420_rgb_sse2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\sse2\libi420_yuy2_sse2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\sse2\libi422_yuy2_sse2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_filter\libdash_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_filter\libhttplive_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_filter\librecord_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_filter\libsmooth_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_autodel_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_bridge_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_chromaprint_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_delay_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_description_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_display_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_dummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_duplicate_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_es_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_gather_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_langfromtelx_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_mosaic_bridge_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_raop_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_record_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_rtp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_setid_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_smem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_standard_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\stream_out\libstream_out_transcode_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\text_renderer\libfreetype_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\text_renderer\libtdummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_chroma\libgrey_yuv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_chroma\libi420_rgb_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_chroma\libi420_yuy2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_chroma\libi422_i420_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_chroma\libi422_yuy2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_chroma\librv32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_chroma\libyuy2_i420_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_chroma\libyuy2_i422_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libadjust_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libalphamask_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libanaglyph_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libantiflicker_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libatmo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libaudiobargraph_v_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libball_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libblendbench_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libblend_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libbluescreen_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libcanvas_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libchain_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libclone_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libcolorthres_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libcroppadd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libdeinterlace_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\liberase_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libextract_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libgaussianblur_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libgradfun_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libgradient_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libgrain_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libhqdn3d_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libinvert_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\liblogo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libmagnify_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libmarq_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libmirror_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libmosaic_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libmotionblur_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libmotiondetect_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libpanoramix_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libposterize_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libpostproc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libpsychedelic_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libpuzzle_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libremoteosd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libripple_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\librotate_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\librss_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libscale_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libscene_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libsepia_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libsharpen_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libsubsdelay_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libswscale_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libtransform_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libwall_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libwave_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_filter\libyuvp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libcaca_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libdirect2d_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libdirect3d_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libdirectdraw_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libdrawable_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libglwin32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libvdummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libvmem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libwingdi_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\video_output\libyuv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\visualization\libgoom_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\visualization\libprojectm_plugin.dll" />
+    <Content Include="VlcLibs\vlcx64\plugins\visualization\libvisual_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\libvlc.dll" />
+    <Content Include="VlcLibs\vlcx86\libvlccore.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_attachment_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_bd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_ftp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_http_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_imem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_mms_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_rar_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_realrtsp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_smb_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_tcp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_udp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libaccess_vdr_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libcdda_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libdshow_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libdtv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libdvdnav_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libdvdread_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libfilesystem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libidummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\liblibbluray_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\liblive555_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\librtp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libscreen_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libsdp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libshm_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libstream_filter_rar_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libtimecode_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libvcd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access\libzip_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access_output\libaccess_output_dummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access_output\libaccess_output_file_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access_output\libaccess_output_http_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access_output\libaccess_output_livehttp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access_output\libaccess_output_shout_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\access_output\libaccess_output_udp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\liba52tofloat32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\liba52tospdif_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libaudiobargraph_a_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libaudio_format_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libchorus_flanger_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libcompressor_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libdolby_surround_decoder_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libdtstofloat32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libdtstospdif_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libequalizer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libgain_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libheadphone_channel_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libkaraoke_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libmono_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libmpgatofixed32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libnormvol_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libparam_eq_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libremap_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libsamplerate_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libscaletempo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libsimple_channel_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libspatializer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libspeex_resampler_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libstereo_widen_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libtrivial_channel_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_filter\libugly_resampler_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_mixer\libfloat_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_mixer\libinteger_mixer_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_output\libadummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_output\libafile_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_output\libamem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_output\libdirectsound_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_output\libmmdevice_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\audio_output\libwaveout_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\liba52_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libadpcm_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libaes3_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libaraw_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libavcodec_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libcc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libcdg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libcrystalhd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libcvdsub_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libddummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libdmo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libdts_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libdvbsub_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libdxva2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libedummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libfaad_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libflac_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libg711_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libkate_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\liblibass_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\liblibmpeg2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\liblpcm_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libmpeg_audio_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libopus_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libpng_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libqsv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libquicktime_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\librawvideo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libschroedinger_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libscte27_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libspeex_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libspudec_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libstl_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libsubsdec_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libsubsusf_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libsvcdsub_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libt140_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libtheora_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libtwolame_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libuleaddvaudio_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libvorbis_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libx264_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\codec\libzvbi_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\control\libdummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\control\libgestures_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\control\libglobalhotkeys_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\control\libhotkeys_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\control\libnetsync_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\control\libntservice_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\control\liboldrc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libaiff_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libasf_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libau_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libavi_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libdemuxdump_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libdemux_cdg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libdemux_stl_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libdirac_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libes_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libflacsys_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libgme_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libh264_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libimage_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libmjpeg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libmkv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libmod_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libmp4_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libmpc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libmpgv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libnsc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libnsv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libnuv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libogg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libplaylist_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libps_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libpva_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\librawaud_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\librawdv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\librawvid_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libreal_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libsid_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libsmf_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libsubtitle_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libts_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libtta_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libty_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libvc1_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libvobsub_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libvoc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libwav_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\demux\libxa_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\gui\libqt4_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\gui\libskins2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\lua\liblua_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\meta_engine\libfolder_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\meta_engine\libtaglib_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\misc\libaudioscrobbler_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\misc\libexport_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\misc\libfingerprinter_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\misc\libgnutls_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\misc\liblogger_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\misc\libstats_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\misc\libvod_rtsp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\misc\libxml_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mmx\libi420_rgb_mmx_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mmx\libi420_yuy2_mmx_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mmx\libi422_yuy2_mmx_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_asf_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_avi_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_dummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_mp4_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_mpjpeg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_ogg_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_ps_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_ts_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\mux\libmux_wav_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_copy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_dirac_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_flac_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_h264_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_mlp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_mpeg4audio_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_mpeg4video_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_mpegvideo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\packetizer\libpacketizer_vc1_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\services_discovery\libmediadirs_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\services_discovery\libpodcast_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\services_discovery\libsap_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\services_discovery\libupnp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\services_discovery\libwindrive_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\sse2\libi420_rgb_sse2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\sse2\libi420_yuy2_sse2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\sse2\libi422_yuy2_sse2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_filter\libdash_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_filter\libhttplive_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_filter\librecord_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_filter\libsmooth_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_autodel_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_bridge_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_chromaprint_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_delay_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_description_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_display_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_dummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_duplicate_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_es_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_gather_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_langfromtelx_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_mosaic_bridge_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_raop_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_record_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_rtp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_setid_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_smem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_standard_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\stream_out\libstream_out_transcode_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\text_renderer\libfreetype_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\text_renderer\libtdummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_chroma\libgrey_yuv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_chroma\libi420_rgb_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_chroma\libi420_yuy2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_chroma\libi422_i420_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_chroma\libi422_yuy2_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_chroma\librv32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_chroma\libyuy2_i420_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_chroma\libyuy2_i422_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libadjust_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libalphamask_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libanaglyph_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libantiflicker_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libatmo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libaudiobargraph_v_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libball_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libblendbench_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libblend_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libbluescreen_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libcanvas_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libchain_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libclone_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libcolorthres_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libcroppadd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libdeinterlace_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\liberase_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libextract_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libgaussianblur_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libgradfun_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libgradient_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libgrain_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libhqdn3d_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libinvert_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\liblogo_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libmagnify_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libmarq_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libmirror_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libmosaic_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libmotionblur_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libmotiondetect_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libpanoramix_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libposterize_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libpostproc_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libpsychedelic_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libpuzzle_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libremoteosd_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libripple_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\librotate_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\librss_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libscale_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libscene_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libsepia_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libsharpen_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libsubsdelay_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libswscale_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libtransform_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libwall_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libwave_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_filter\libyuvp_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libcaca_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libdirect2d_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libdirect3d_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libdirectdraw_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libdrawable_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libglwin32_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libvdummy_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libvmem_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libwingdi_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\video_output\libyuv_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\visualization\libgoom_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\visualization\libprojectm_plugin.dll" />
+    <Content Include="VlcLibs\vlcx86\plugins\visualization\libvisual_plugin.dll" />
+    <Content Include="Resources\header.png" />
+    <Content Include="Resources\newUser.png" />
+    <Content Include="Resources\SplashScreen.png" />
+    <Content Include="Resources\userLogo.png" />
+    <Content Include="Resources\LoginLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formant\build\bdist.win32\winexe\bundle-2.7\" />
+    <Folder Include="Formant\build\bdist.win32\winexe\collect-2.7\ctypes\" />
+    <Folder Include="Formant\build\bdist.win32\winexe\collect-2.7\encodings\" />
+    <Folder Include="Formant\build\bdist.win32\winexe\collect-2.7\logging\" />
+    <Folder Include="Formant\build\bdist.win32\winexe\collect-2.7\unittest\" />
+    <Folder Include="Formant\build\bdist.win32\winexe\temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
