@@ -1,0 +1,10 @@
+CENTREOVAL = 0.5
+MIDDLEOVAL = 1.5
+OUTEROVAL = 3
+TARGETSIZERATIO = 0.67
+
+To change the values simply replace the numbers above.
+NOTE: This effects all users on this computer.
+
+Please note the defaults are C=0.45, M=1.5, O=3, T:0.67
+These are constant and will be returned upon a fresh install.

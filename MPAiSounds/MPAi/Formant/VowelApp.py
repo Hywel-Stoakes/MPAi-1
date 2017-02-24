@@ -56,10 +56,10 @@ class VowelApp:
             except Exception as e:
                 print e
                 # self.quitPlot()
-                #TODO remove the testing code below...
                 print 'for Testing, setting you to masculine and modern'
                 voiceType = 'masculine'
                 langType = 'native'
+
 
         self.vowelScorer = VowelScorer()
         self.id = self.getID(voiceType, langType)
@@ -71,11 +71,12 @@ class VowelApp:
         self.previousVowel = 'e:'
 
         self.initialiseRoot()
+
         #self.initiatePron()
         self.setUpMenus()
         self.initialiseFrame()
 
-        self.loadVowelPlot(self.id, self.vowel, FRAMEWIDTH, FRAMEHEIGHT)
+        self.loadVowelPlot(self.id, self.vowel, self.plotWidth, self.plotHeight)
 
 
     """
@@ -87,10 +88,25 @@ class VowelApp:
         self.root.protocol("WM_DELETE_WINDOW", self.quitApp) #Defines the default close operation.
         self.resizeCount=0
 
-        self.root.resizable(False, False) #Allows the window to be resized both verically and horizonally.
-        self.root.minsize(510,510)
+        try:
+            maxWidth = self.root.winfo_screenwidth()
+            maxHeight = self.root.winfo_screenheight()
+            print maxWidth, maxHeight
+            if maxHeight > 950:
+                self.plotHeight = 900
+                self.plotWidth = 900
+            elif maxHeight > 650:
+                self.plotHeight = 600
+                self.plotWidth = 600
+            else:
+                self.plotHeight = 500
+                self.plotWidth = 500
+        except(Exception):
+            self.plotWidth = FRAMEWIDTH
+            self.plotHeight = FRAMEHEIGHT
 
-        self.positionWindowInCentre(self.root, FRAMEWIDTH, FRAMEHEIGHT) #Determines where to place the Frame on the screen.
+        self.root.resizable(False, False) #Allows the window to be resized both verically and horizonally.
+        self.positionWindowInCentre(self.root, self.plotWidth, self.plotHeight) #Determines where to place the Frame on the screen.
 
     def preventResizing(self):
         self.root.resizable(False, False)
